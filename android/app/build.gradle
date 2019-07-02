@@ -138,6 +138,9 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-vector-icons')
+    implementation project(':react-native-fs')
+    implementation project(':react-native-document-picker')
     implementation project(':react-native-ble-manager')
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])

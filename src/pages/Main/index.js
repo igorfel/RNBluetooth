@@ -1,51 +1,56 @@
-import React, { useEffect, useState } from 'react';
-import BleComponent from '~/components/bleComponent';
-
+import React, { useEffect, useState } from "react";
+import BleComponent from "~/components/settings/bleComponent";
+import DocPicker from "~/components/settings/DocPicker";
 import {
-  Text, Image, StyleSheet, Dimensions, ImageBackground, StatusBar,
-} from 'react-native';
+  Text,
+  StyleSheet,
+  Dimensions,
+  ImageBackground,
+  StatusBar
+} from "react-native";
 
-// import { BleManager } from 'react-native-ble-plx';
+const Main = ({ navigation }) => {
+  return (
+    <ImageBackground
+      source={{
+        uri: "https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/background.png"
+      }}
+      style={styles.container}
+      resizeMode="cover"
+    >
+      <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
+
+      <Text style={styles.welcome}>Bem-vindo!</Text>
+      <DocPicker nav={navigation} />
+      <BleComponent />
+    </ImageBackground>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    alignItems: "center",
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 20
   },
   fileName: {
-    fontWeight: 'bold',
-    marginTop: 5,
+    fontWeight: "bold",
+    marginTop: 5
   },
   instructions: {
-    color: '#DDD',
+    color: "#DDD",
     fontSize: 14,
     marginTop: 20,
-    textAlign: 'center',
+    textAlign: "center"
   },
   welcome: {
-    height: Dimensions.get('window').height * 0.11,
-    marginVertical: Dimensions.get('window').height * 0.11,
-    width: Dimensions.get('window').height * 0.9 * (1950 / 662),
-    color: '#fff',
+    height: Dimensions.get("window").height * 0.11,
+    marginVertical: Dimensions.get("window").height * 0.11,
+    width: Dimensions.get("window").height * 0.9 * (1950 / 662),
+    color: "#fff",
     fontSize: 22,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
+    fontWeight: "bold",
+    textAlign: "center"
+  }
 });
-
-const Main = () => (
-  <ImageBackground
-    source={{
-      uri: 'https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/background.png',
-    }}
-    style={styles.container}
-    resizeMode="cover"
-  >
-    <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
-
-    <Text style={styles.welcome}>Bem-vindo ao teste Bluetooth/BLE!</Text>
-    <BleComponent />
-  </ImageBackground>
-);
 export default Main;

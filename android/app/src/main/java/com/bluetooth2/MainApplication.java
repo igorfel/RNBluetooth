@@ -3,6 +3,9 @@ package com.bluetooth2;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.rnfs.RNFSPackage;
+import com.reactnativedocumentpicker.ReactNativeDocumentPicker;
 import it.innove.BleManagerPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,6 +28,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new VectorIconsPackage(),
+            new RNFSPackage(),
+            new ReactNativeDocumentPicker(),
             new BleManagerPackage(),
             new RNGestureHandlerPackage()
       );

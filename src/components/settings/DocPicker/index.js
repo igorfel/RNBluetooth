@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { View, Button, StyleSheet } from "react-native";
 import {
   DocumentPicker,
   DocumentPickerUtil
 } from "react-native-document-picker";
 import RNFS from "react-native-fs";
 
-// import { Container } from './styles';
+import { OpenFilesButton } from "./style";
 
 export default function DocPicker({ nav }) {
   const [layout, setLayout] = useState();
@@ -36,14 +35,5 @@ export default function DocPicker({ nav }) {
     }
   }, [layout]);
 
-  return (
-    <Button
-      style={styles.filePicker}
-      color="#333"
-      title="Carregar JSON"
-      onPress={showFilePicker}
-    />
-  );
+  return <OpenFilesButton title="Carregar JSON" onPress={showFilePicker} />;
 }
-
-const styles = StyleSheet.create({});
